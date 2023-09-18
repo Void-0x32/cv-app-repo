@@ -25,19 +25,21 @@ class MainScreenState extends State<MainScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xffcaf0f8),
-      body: GradientBackground(
-        gradient: const LinearGradient(
-            begin: Alignment.topLeft,
-            colors: [Color(0xff90E0EF), Color(0xff00B4D8)]),
-        child: const Center(
-          child: Text(
-            'Welcome, this is my CV...',
-            style: TextStyle(
-                color: Color(0xff03045E),
-                fontSize: 30,
-                fontWeight: FontWeight.w600,
-                fontFamily: 'Sono',
-                height: 15),
+      body: SafeArea(
+        child: GradientBackground(
+          gradient: const LinearGradient(
+              begin: Alignment.topLeft,
+              colors: [Color(0xffEDF2FB), Color(0xffabc4ff)]),
+          child: const Center(
+            child: Text(
+              'Welcome, this is my CV...',
+              style: TextStyle(
+                  color: Color(0xff03045E),
+                  fontSize: 30,
+                  fontWeight: FontWeight.w600,
+                  fontFamily: 'Sono',
+                  height: 15),
+            ),
           ),
         ),
       ),
