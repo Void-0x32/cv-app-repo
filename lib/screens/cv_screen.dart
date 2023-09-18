@@ -59,7 +59,8 @@ class CVScreenState extends State<CVScreen> {
     _nameController = TextEditingController(text: allStrings.name);
     _roleController = TextEditingController(text: allStrings.role);
     _phoneController = TextEditingController(text: allStrings.phone);
-    _experiencesController = TextEditingController(text: allStrings.experiences);
+    _experiencesController =
+        TextEditingController(text: allStrings.experiences);
     _educationController = TextEditingController(text: allStrings.education);
     _slackIdController = TextEditingController(text: allStrings.slackId);
     _gitHubIdController = TextEditingController(text: allStrings.githubId);
@@ -99,18 +100,18 @@ class CVScreenState extends State<CVScreen> {
                 color: const Color(0xffe2eafc),
                 child: Column(
                   children: [
-                     TextView(
-                      text: allStrings.name,
+                    TextView(
+                      text: _nameController.text,
                       fontSize: 25,
                       fontWeight: FontWeight.w900,
                     ),
-                     TextView(
-                      text: allStrings.role,
+                    TextView(
+                      text: _roleController.text,
                       fontSize: 15,
                       fontWeight: FontWeight.w700,
                     ),
-                     TextView(
-                      text: allStrings.phone,
+                    TextView(
+                      text: _phoneController.text,
                       fontSize: 10,
                       fontWeight: FontWeight.w400,
                     ),
@@ -128,7 +129,7 @@ class CVScreenState extends State<CVScreen> {
                       child: SingleChildScrollView(
                         child: Column(
                           children: [
-                             Row(
+                            Row(
                               children: [
                                 const Icon(
                                   Icons.gps_fixed_outlined,
@@ -143,12 +144,12 @@ class CVScreenState extends State<CVScreen> {
                                     fontWeight: FontWeight.w900),
                               ],
                             ),
-                             TextView(
-                              text: allStrings.address,
+                            TextView(
+                              text: _addressController.text,
                               fontSize: 12,
                               fontWeight: FontWeight.w500,
                             ),
-                             Row(
+                            Row(
                               children: [
                                 const Icon(
                                   Icons.mail_outlined,
@@ -164,8 +165,8 @@ class CVScreenState extends State<CVScreen> {
                                 ),
                               ],
                             ),
-                             TextView(
-                              text: allStrings.email,
+                            TextView(
+                              text: _emailController.text,
                               fontSize: 12,
                               fontWeight: FontWeight.w500,
                             ),
@@ -179,15 +180,15 @@ class CVScreenState extends State<CVScreen> {
                                 const SizedBox(
                                   width: 10,
                                 ),
-                                 TextView(
+                                TextView(
                                   text: allStrings.githubIdLabel,
                                   fontSize: 17,
                                   fontWeight: FontWeight.w900,
                                 ),
                               ],
                             ),
-                             TextView(
-                              text: allStrings.githubId,
+                            TextView(
+                              text: _gitHubIdController.text,
                               fontSize: 12,
                               fontWeight: FontWeight.w500,
                             ),
@@ -198,15 +199,15 @@ class CVScreenState extends State<CVScreen> {
                                   scale: 17,
                                   fit: BoxFit.cover,
                                 ),
-                                 TextView(
+                                TextView(
                                   text: allStrings.slackIdLabel,
                                   fontSize: 15,
                                   fontWeight: FontWeight.w900,
                                 ),
                               ],
                             ),
-                             TextView(
-                              text: allStrings.slackId,
+                            TextView(
+                              text: _slackIdController.text,
                               fontSize: 12,
                               fontWeight: FontWeight.w500,
                             ),
@@ -221,62 +222,67 @@ class CVScreenState extends State<CVScreen> {
                       color: Color(0xff9381ff),
                       thickness: .5,
                     ),
-                     TextView(
-                      text: allStrings.educationLabel,
-                      fontSize: 18,
-                      fontWeight: FontWeight.w900,
-                    ),
-                     TextView(
-                      text: allStrings.education,
-                      fontSize: 15,
-                      fontWeight: FontWeight.w500,
-                    ),
                   ],
                 ),
               ),
               Expanded(
                 child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                     TextView(
+                    TextView(
                       text: allStrings.bioLabel,
                       fontSize: 18,
                       fontWeight: FontWeight.w900,
+                    ),
+                    Container(
+                      width: MediaQuery.of(context).size.width,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          border: Border.all(color: const Color(0xffb8c0ff))),
+                      child: TextView(
+                        text: _bioController.text,
+                        fontSize: 12,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                    const Divider(
+                      color: Color(0xff7209b7),
+                      thickness: .50,
+                    ),
+                    TextView(
+                      text: allStrings.educationLabel,
+                      fontSize: 18,
+                      fontWeight: FontWeight.w900,
+                    ),
+                    Container(
+                      width: MediaQuery.of(context).size.width,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          border: Border.all(color: const Color(0xffb8c0ff))),
+                      child: TextView(
+                        text: _educationController.text,
+                        fontSize: 12,
+                        fontWeight: FontWeight.w500,
+                      ),
                     ),
                     const Divider(
                       color: Color(0xff7209b7),
                       thickness: .50,
                     ),
                     Container(
-                      width: MediaQuery.of(context).size.width,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          border: Border.all(color: const Color(0xffb8c0ff))),
-                      child:  TextView(
-                        text:
-                            allStrings.bio,
-                        fontSize: 12,
-                        fontWeight: FontWeight.w500,
-                      ),
-                    ),
-                    Container(
-                      child:  TextView(
+                      child: TextView(
                         text: allStrings.experiencesLabel,
                         fontSize: 18,
                         fontWeight: FontWeight.w900,
                       ),
                     ),
-                    const Divider(
-                      height: 20,
-                      color: Color(0xff9381ff),
-                      thickness: .50,
-                    ),
                     Container(
                       width: MediaQuery.of(context).size.width,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
                           border: Border.all(color: const Color(0xffb8c0ff))),
-                      child:  TextView(
-                        text: allStrings.experiences,
+                      child: TextView(
+                        text: _experiencesController.text,
                         fontSize: 12,
                         fontWeight: FontWeight.w500,
                       ),
@@ -287,7 +293,7 @@ class CVScreenState extends State<CVScreen> {
                       thickness: .15,
                     ),
                     Container(
-                      child:  TextView(
+                      child: TextView(
                         text: allStrings.skillsInterestsLabel,
                         fontSize: 18,
                         fontWeight: FontWeight.w900,
@@ -298,56 +304,61 @@ class CVScreenState extends State<CVScreen> {
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
                           border: Border.all(color: const Color(0xffb8c0ff))),
-                      child:  TextView(
-                        text: allStrings.skillsInterests,
+                      child: TextView(
+                        text: _skillsInterestsController.text,
                         fontSize: 12,
                         fontWeight: FontWeight.w500,
                       ),
                     ),
-                    ElevatedButton(
-                      style: ButtonStyle(
-                        minimumSize:
-                            MaterialStateProperty.all(const Size(150, 51)),
-                        maximumSize:
-                            MaterialStateProperty.all(const Size(150, 51)),
-                        elevation: const MaterialStatePropertyAll(20),
-                        backgroundColor: MaterialStateProperty.all(
-                          const Color(0xffabc4ff),
-                        ),
-                      ),
-                      onPressed: () {
-                        cvFields = CVFields(
-                          name: _nameController.text,
-                          address: _addressController.text,
-                          email: _emailController.text,
-                          phone: _phoneController.text,
-                          bio: _bioController.text,
-                          slackId: _slackIdController.text,
-                          githubId: _gitHubIdController.text,
-                          education: _educationController.text,
-                          experience: _experiencesController.text,
-                          skillsInterests: _skillsInterestsController.text,
-                          role: _roleController.text,
-                        );
-                        getCVdata(cvFields);
-                      },
-                      child: const Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                            "Edit CV",
-                            style: TextStyle(
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        ElevatedButton(
+                          style: ButtonStyle(
+                            minimumSize:
+                                MaterialStateProperty.all(const Size(150, 51)),
+                            maximumSize:
+                                MaterialStateProperty.all(const Size(150, 51)),
+                            elevation: const MaterialStatePropertyAll(20),
+                            backgroundColor: MaterialStateProperty.all(
+                              const Color(0xffabc4ff),
+                            ),
+                          ),
+                          onPressed: () {
+                            cvFields = CVFields(
+                              name: _nameController.text,
+                              address: _addressController.text,
+                              email: _emailController.text,
+                              phone: _phoneController.text,
+                              bio: _bioController.text,
+                              slackId: _slackIdController.text,
+                              githubId: _gitHubIdController.text,
+                              education: _educationController.text,
+                              experience: _experiencesController.text,
+                              skillsInterests: _skillsInterestsController.text,
+                              role: _roleController.text,
+                            );
+                            getCVdata(cvFields);
+                          },
+                          child: const Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                "Edit CV",
+                                style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 17,
+                                    fontWeight: FontWeight.w700),
+                              ),
+                              Icon(
+                                Icons.edit_outlined,
                                 color: Colors.black,
-                                fontSize: 17,
-                                fontWeight: FontWeight.w700),
+                                size: 20,
+                              ),
+                            ],
                           ),
-                          Icon(
-                            Icons.edit_outlined,
-                            color: Colors.black,
-                            size: 20,
-                          ),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
                   ],
                 ),
@@ -358,7 +369,8 @@ class CVScreenState extends State<CVScreen> {
       ),
     );
   }
-    void getCVdata(CVFields cvFields) async {
+
+  void getCVdata(CVFields cvFields) async {
     await Navigator.of(context).push(
       MaterialPageRoute(
           builder: (context) => EditCvPage(
@@ -381,6 +393,7 @@ class CVScreenState extends State<CVScreen> {
     );
   }
 }
+
 class TextView extends StatelessWidget {
   const TextView(
       {super.key,
@@ -412,4 +425,3 @@ class TextView extends StatelessWidget {
     );
   }
 }
-

@@ -50,16 +50,15 @@ class EditCvPageState extends State<EditCvPage> {
       appBar: AppBar(
         title: const Text(
           'Edit CV',
-          style: TextStyle(color: Color(0xffADE8F4)),
+          style: TextStyle(color: Colors.black87),
         ),
-        backgroundColor: const Color(0xfffffff),
-        iconTheme: const IconThemeData(color: Color(0xffADE8F4)),
+        backgroundColor: const Color(0xffabc4ff),
       ),
-      backgroundColor: const Color(0xff0077B6),
+      backgroundColor: const Color(0xffEDF2FB),
       body: GradientBackground(
         gradient: const LinearGradient(
             begin: Alignment.topLeft,
-            colors: [Color(0xff0077B6), Color(0xff023E8A)]),
+            colors: [Color(0xffEDF2FB), Color(0xffabc4ff)]),
         child: SingleChildScrollView(
           padding: const EdgeInsets.all(16.0),
           child: Column(
@@ -73,16 +72,16 @@ class EditCvPageState extends State<EditCvPage> {
                 controller: _nameController,
                 decoration: InputDecoration(
                   labelText: allStrings.nameLabel,
-                  labelStyle: const TextStyle(color: Color(0xffCAF0F8)),
+                  labelStyle: const TextStyle(color: Colors.black),
                   enabledBorder: OutlineInputBorder(
                     borderSide: BorderSide(color: Colors.grey.withOpacity(0.4)),
                   ),
                   focusedBorder: OutlineInputBorder(
-                    borderSide: const BorderSide(color: Color(0xffCAF0F8)),
+                    borderSide: const BorderSide(color: Colors.black),
                     borderRadius: BorderRadius.circular(23),
                   ),
                 ),
-                style: const TextStyle(color: Color(0xffCAF0F8)),
+                style: const TextStyle(color: Colors.black87),
               ),
               const SizedBox(
                 height: 15,
@@ -91,16 +90,16 @@ class EditCvPageState extends State<EditCvPage> {
                 controller: _addressController,
                 decoration: InputDecoration(
                   labelText: allStrings.addressLabel,
-                  labelStyle: const TextStyle(color: Color(0xffCAF0F8)),
+                  labelStyle: const TextStyle(color: Colors.black),
                   enabledBorder: OutlineInputBorder(
                     borderSide: BorderSide(color: Colors.grey.withOpacity(0.4)),
                   ),
                   focusedBorder: OutlineInputBorder(
-                    borderSide: const BorderSide(color: Color(0xffCAF0F8)),
+                    borderSide: const BorderSide(color: Colors.black),
                     borderRadius: BorderRadius.circular(23),
                   ),
                 ),
-                style: const TextStyle(color: Color(0xffCAF0F8)),
+                style: const TextStyle(color: Colors.black87),
               ),
               const SizedBox(
                 height: 15,
@@ -110,16 +109,16 @@ class EditCvPageState extends State<EditCvPage> {
                 controller: _roleController,
                 decoration: InputDecoration(
                   labelText: allStrings.roleLabel,
-                  labelStyle: const TextStyle(color: Color(0xffCAF0F8)),
+                  labelStyle: const TextStyle(color: Colors.black),
                   enabledBorder: OutlineInputBorder(
                     borderSide: BorderSide(color: Colors.grey.withOpacity(0.4)),
                   ),
                   focusedBorder: OutlineInputBorder(
-                    borderSide: const BorderSide(color: Color(0xffCAF0F8)),
+                    borderSide: const BorderSide(color: Colors.black),
                     borderRadius: BorderRadius.circular(23),
                   ),
                 ),
-                style: const TextStyle(color: Color(0xffCAF0F8)),
+                style: const TextStyle(color: Colors.black87),
               ),
               const SizedBox(
                 height: 15,
@@ -129,16 +128,16 @@ class EditCvPageState extends State<EditCvPage> {
                 controller: _phoneController,
                 decoration: InputDecoration(
                   labelText: allStrings.phoneLabel,
-                  labelStyle: const TextStyle(color: Color(0xffCAF0F8)),
+                  labelStyle: const TextStyle(color: Colors.black),
                   enabledBorder: OutlineInputBorder(
                     borderSide: BorderSide(color: Colors.grey.withOpacity(0.4)),
                   ),
                   focusedBorder: OutlineInputBorder(
-                    borderSide: const BorderSide(color: Color(0xffCAF0F8)),
+                    borderSide: const BorderSide(color: Colors.black),
                     borderRadius: BorderRadius.circular(23),
                   ),
                 ),
-                style: const TextStyle(color: Color(0xffCAF0F8)),
+                style: const TextStyle(color: Colors.black87),
               ),
               const SizedBox(
                 height: 15,
@@ -148,16 +147,16 @@ class EditCvPageState extends State<EditCvPage> {
                 controller: _emailController,
                 decoration: InputDecoration(
                   labelText: allStrings.emailLabel,
-                  labelStyle: const TextStyle(color: Color(0xffCAF0F8)),
+                  labelStyle: const TextStyle(color: Colors.black),
                   enabledBorder: OutlineInputBorder(
                     borderSide: BorderSide(color: Colors.grey.withOpacity(0.4)),
                   ),
                   focusedBorder: OutlineInputBorder(
-                    borderSide: const BorderSide(color: Color(0xffCAF0F8)),
+                    borderSide: const BorderSide(color: Colors.black),
                     borderRadius: BorderRadius.circular(23),
                   ),
                 ),
-                style: const TextStyle(color: Color(0xffCAF0F8)),
+                style: const TextStyle(color: Colors.black87),
                 maxLength: 100,
               ),
               const SizedBox(
@@ -168,16 +167,16 @@ class EditCvPageState extends State<EditCvPage> {
                 controller: _slackIdController,
                 decoration: InputDecoration(
                   labelText: allStrings.slackIdLabel,
-                  labelStyle: const TextStyle(color: Color(0xffCAF0F8)),
+                  labelStyle: const TextStyle(color: Colors.black),
                   enabledBorder: OutlineInputBorder(
                     borderSide: BorderSide(color: Colors.grey.withOpacity(0.4)),
                   ),
                   focusedBorder: OutlineInputBorder(
-                    borderSide: const BorderSide(color: Color(0xffCAF0F8)),
+                    borderSide: const BorderSide(color: Colors.black),
                     borderRadius: BorderRadius.circular(23),
                   ),
                 ),
-                style: const TextStyle(color: Color(0xffCAF0F8)),
+                style: const TextStyle(color: Colors.black87),
                 maxLength: 25,
               ),
               const SizedBox(
@@ -188,16 +187,16 @@ class EditCvPageState extends State<EditCvPage> {
                 controller: _gitHubIdController,
                 decoration: InputDecoration(
                   labelText: allStrings.githubIdLabel,
-                  labelStyle: const TextStyle(color: Color(0xffCAF0F8)),
+                  labelStyle: const TextStyle(color: Colors.black),
                   enabledBorder: OutlineInputBorder(
                     borderSide: BorderSide(color: Colors.grey.withOpacity(0.4)),
                   ),
                   focusedBorder: OutlineInputBorder(
-                    borderSide: const BorderSide(color: Color(0xffCAF0F8)),
+                    borderSide: const BorderSide(color: Colors.black),
                     borderRadius: BorderRadius.circular(23),
                   ),
                 ),
-                style: const TextStyle(color: Color(0xffCAF0F8)),
+                style: const TextStyle(color: Colors.black87),
                 maxLength: 25,
               ),
               const SizedBox(
@@ -208,17 +207,16 @@ class EditCvPageState extends State<EditCvPage> {
                 controller: _experiencesController,
                 decoration: InputDecoration(
                   labelText: allStrings.experiencesLabel,
-                  labelStyle: const TextStyle(color: Color(0xffCAF0F8)),
+                  labelStyle: const TextStyle(color: Colors.black),
                   enabledBorder: OutlineInputBorder(
                     borderSide: BorderSide(color: Colors.grey.withOpacity(0.4)),
                   ),
                   focusedBorder: OutlineInputBorder(
-                    borderSide: const BorderSide(color: Color(0xffCAF0F8)),
+                    borderSide: const BorderSide(color: Colors.black),
                     borderRadius: BorderRadius.circular(23),
                   ),
                 ),
-                style: const TextStyle(color: Color(0xffCAF0F8)),
-                maxLength: 25,
+                style: const TextStyle(color: Colors.black87),
               ),
               const SizedBox(
                 height: 15,
@@ -228,16 +226,16 @@ class EditCvPageState extends State<EditCvPage> {
                 controller: _educationController,
                 decoration: InputDecoration(
                   labelText: allStrings.educationLabel,
-                  labelStyle: const TextStyle(color: Color(0xffCAF0F8)),
+                  labelStyle: const TextStyle(color: Colors.black),
                   enabledBorder: OutlineInputBorder(
                     borderSide: BorderSide(color: Colors.grey.withOpacity(0.4)),
                   ),
                   focusedBorder: OutlineInputBorder(
-                    borderSide: const BorderSide(color: Color(0xffCAF0F8)),
+                    borderSide: const BorderSide(color: Colors.black),
                     borderRadius: BorderRadius.circular(23),
                   ),
                 ),
-                style: const TextStyle(color: Color(0xffCAF0F8)),
+                style: const TextStyle(color: Colors.black87),
               ),
               const SizedBox(
                 height: 15,
@@ -247,16 +245,16 @@ class EditCvPageState extends State<EditCvPage> {
                 controller: _bioController,
                 decoration: InputDecoration(
                   labelText: allStrings.bioLabel,
-                  labelStyle: const TextStyle(color: Color(0xffCAF0F8)),
+                  labelStyle: const TextStyle(color: Colors.black),
                   enabledBorder: OutlineInputBorder(
                     borderSide: BorderSide(color: Colors.grey.withOpacity(0.4)),
                   ),
                   focusedBorder: OutlineInputBorder(
-                    borderSide: const BorderSide(color: Color(0xffCAF0F8)),
+                    borderSide: const BorderSide(color: Colors.black),
                     borderRadius: BorderRadius.circular(23),
                   ),
                 ),
-                style: const TextStyle(color: Color(0xffCAF0F8)),
+                style: const TextStyle(color: Colors.black87),
               ),
               const SizedBox(
                 height: 15,
@@ -266,16 +264,16 @@ class EditCvPageState extends State<EditCvPage> {
                 controller: _skillsInterestsController,
                 decoration: InputDecoration(
                   labelText: allStrings.skillsInterestsLabel,
-                  labelStyle: const TextStyle(color: Color(0xffCAF0F8)),
+                  labelStyle: const TextStyle(color: Colors.black),
                   enabledBorder: OutlineInputBorder(
                     borderSide: BorderSide(color: Colors.grey.withOpacity(0.4)),
                   ),
                   focusedBorder: OutlineInputBorder(
-                    borderSide: const BorderSide(color: Color(0xffCAF0F8)),
+                    borderSide: const BorderSide(color: Colors.black),
                     borderRadius: BorderRadius.circular(23),
                   ),
                 ),
-                style: const TextStyle(color: Color(0xffCAF0F8)),
+                style: const TextStyle(color: Colors.black87),
               ),
 
               SubmitButton(
@@ -347,7 +345,7 @@ class SubmitButton extends StatelessWidget {
         maximumSize: MaterialStateProperty.all(const Size(150, 51)),
         elevation: const MaterialStatePropertyAll(20),
         backgroundColor: MaterialStateProperty.all(
-          const Color(0xff90e0ef),
+          const Color(0xffabc4ff),
         ),
       ),
       onPressed: () {
