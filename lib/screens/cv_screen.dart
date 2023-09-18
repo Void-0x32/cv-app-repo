@@ -90,282 +90,284 @@ class CVScreenState extends State<CVScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: Stack(
-        children: [
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              Container(
-                width: 200,
-                color: const Color(0xffe2eafc),
-                child: Column(
-                  children: [
-                    TextView(
-                      text: _nameController.text,
-                      fontSize: 25,
-                      fontWeight: FontWeight.w900,
-                    ),
-                    TextView(
-                      text: _roleController.text,
-                      fontSize: 15,
-                      fontWeight: FontWeight.w700,
-                    ),
-                    TextView(
-                      text: _phoneController.text,
-                      fontSize: 10,
-                      fontWeight: FontWeight.w400,
-                    ),
-                    Container(
-                      width: 180,
-                      height: 300,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        border: Border.all(
-                          width: 2.5,
-                          style: BorderStyle.solid,
-                          color: const Color(0xffb8c0ff),
-                        ),
-                      ),
-                      child: SingleChildScrollView(
-                        child: Column(
-                          children: [
-                            Row(
-                              children: [
-                                const Icon(
-                                  Icons.gps_fixed_outlined,
-                                  size: 20,
-                                ),
-                                const SizedBox(
-                                  width: 10,
-                                ),
-                                TextView(
-                                    text: allStrings.addressLabel,
-                                    fontSize: 17,
-                                    fontWeight: FontWeight.w900),
-                              ],
-                            ),
-                            TextView(
-                              text: _addressController.text,
-                              fontSize: 12,
-                              fontWeight: FontWeight.w500,
-                            ),
-                            Row(
-                              children: [
-                                const Icon(
-                                  Icons.mail_outlined,
-                                  size: 20,
-                                ),
-                                const SizedBox(
-                                  width: 12,
-                                ),
-                                TextView(
-                                  text: allStrings.emailLabel,
-                                  fontSize: 17,
-                                  fontWeight: FontWeight.w900,
-                                ),
-                              ],
-                            ),
-                            TextView(
-                              text: _emailController.text,
-                              fontSize: 12,
-                              fontWeight: FontWeight.w500,
-                            ),
-                            Row(
-                              children: [
-                                Image.asset(
-                                  'images/github.png',
-                                  scale: 20,
-                                  fit: BoxFit.cover,
-                                ),
-                                const SizedBox(
-                                  width: 10,
-                                ),
-                                TextView(
-                                  text: allStrings.githubIdLabel,
-                                  fontSize: 17,
-                                  fontWeight: FontWeight.w900,
-                                ),
-                              ],
-                            ),
-                            TextView(
-                              text: _gitHubIdController.text,
-                              fontSize: 12,
-                              fontWeight: FontWeight.w500,
-                            ),
-                            Row(
-                              children: [
-                                Image.asset(
-                                  'images/slack_logo.png',
-                                  scale: 17,
-                                  fit: BoxFit.cover,
-                                ),
-                                TextView(
-                                  text: allStrings.slackIdLabel,
-                                  fontSize: 15,
-                                  fontWeight: FontWeight.w900,
-                                ),
-                              ],
-                            ),
-                            TextView(
-                              text: _slackIdController.text,
-                              fontSize: 12,
-                              fontWeight: FontWeight.w500,
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    const Divider(
-                      color: Color(0xff9381ff),
-                      thickness: .5,
-                    ),
-                  ],
-                ),
-              ),
-              Expanded(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    TextView(
-                      text: allStrings.bioLabel,
-                      fontSize: 18,
-                      fontWeight: FontWeight.w900,
-                    ),
-                    Container(
-                      width: MediaQuery.of(context).size.width,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          border: Border.all(color: const Color(0xffb8c0ff))),
-                      child: TextView(
-                        text: _bioController.text,
-                        fontSize: 12,
-                        fontWeight: FontWeight.w500,
-                      ),
-                    ),
-                    const Divider(
-                      color: Color(0xff7209b7),
-                      thickness: .50,
-                    ),
-                    TextView(
-                      text: allStrings.educationLabel,
-                      fontSize: 18,
-                      fontWeight: FontWeight.w900,
-                    ),
-                    Container(
-                      width: MediaQuery.of(context).size.width,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          border: Border.all(color: const Color(0xffb8c0ff))),
-                      child: TextView(
-                        text: _educationController.text,
-                        fontSize: 12,
-                        fontWeight: FontWeight.w500,
-                      ),
-                    ),
-                    const Divider(
-                      color: Color(0xff7209b7),
-                      thickness: .50,
-                    ),
-                    Container(
-                      child: TextView(
-                        text: allStrings.experiencesLabel,
-                        fontSize: 18,
+      body: SafeArea(
+        child: Stack(
+          children: [
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Container(
+                  width: 200,
+                  color: const Color(0xffe2eafc),
+                  child: Column(
+                    children: [
+                      TextView(
+                        text: _nameController.text,
+                        fontSize: 25,
                         fontWeight: FontWeight.w900,
                       ),
-                    ),
-                    Container(
-                      width: MediaQuery.of(context).size.width,
-                      decoration: BoxDecoration(
+                      TextView(
+                        text: _roleController.text,
+                        fontSize: 15,
+                        fontWeight: FontWeight.w700,
+                      ),
+                      TextView(
+                        text: _phoneController.text,
+                        fontSize: 10,
+                        fontWeight: FontWeight.w400,
+                      ),
+                      Container(
+                        width: 180,
+                        height: 300,
+                        decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
-                          border: Border.all(color: const Color(0xffb8c0ff))),
-                      child: TextView(
-                        text: _experiencesController.text,
-                        fontSize: 12,
-                        fontWeight: FontWeight.w500,
-                      ),
-                    ),
-                    const Divider(
-                      height: .50,
-                      color: Color(0xff9381ff),
-                      thickness: .15,
-                    ),
-                    Container(
-                      child: TextView(
-                        text: allStrings.skillsInterestsLabel,
-                        fontSize: 18,
-                        fontWeight: FontWeight.w900,
-                      ),
-                    ),
-                    Container(
-                      width: MediaQuery.of(context).size.width,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          border: Border.all(color: const Color(0xffb8c0ff))),
-                      child: TextView(
-                        text: _skillsInterestsController.text,
-                        fontSize: 12,
-                        fontWeight: FontWeight.w500,
-                      ),
-                    ),
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        ElevatedButton(
-                          style: ButtonStyle(
-                            minimumSize:
-                                MaterialStateProperty.all(const Size(150, 51)),
-                            maximumSize:
-                                MaterialStateProperty.all(const Size(150, 51)),
-                            elevation: const MaterialStatePropertyAll(20),
-                            backgroundColor: MaterialStateProperty.all(
-                              const Color(0xffabc4ff),
-                            ),
+                          border: Border.all(
+                            width: 2.5,
+                            style: BorderStyle.solid,
+                            color: const Color(0xffb8c0ff),
                           ),
-                          onPressed: () {
-                            cvFields = CVFields(
-                              name: _nameController.text,
-                              address: _addressController.text,
-                              email: _emailController.text,
-                              phone: _phoneController.text,
-                              bio: _bioController.text,
-                              slackId: _slackIdController.text,
-                              githubId: _gitHubIdController.text,
-                              education: _educationController.text,
-                              experience: _experiencesController.text,
-                              skillsInterests: _skillsInterestsController.text,
-                              role: _roleController.text,
-                            );
-                            getCVdata(cvFields);
-                          },
-                          child: const Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
+                        ),
+                        child: SingleChildScrollView(
+                          child: Column(
                             children: [
-                              Text(
-                                "Edit CV",
-                                style: TextStyle(
-                                    color: Colors.black,
-                                    fontSize: 17,
-                                    fontWeight: FontWeight.w700),
+                              Row(
+                                children: [
+                                  const Icon(
+                                    Icons.gps_fixed_outlined,
+                                    size: 20,
+                                  ),
+                                  const SizedBox(
+                                    width: 10,
+                                  ),
+                                  TextView(
+                                      text: allStrings.addressLabel,
+                                      fontSize: 17,
+                                      fontWeight: FontWeight.w900),
+                                ],
                               ),
-                              Icon(
-                                Icons.edit_outlined,
-                                color: Colors.black,
-                                size: 20,
+                              TextView(
+                                text: _addressController.text,
+                                fontSize: 12,
+                                fontWeight: FontWeight.w500,
+                              ),
+                              Row(
+                                children: [
+                                  const Icon(
+                                    Icons.mail_outlined,
+                                    size: 20,
+                                  ),
+                                  const SizedBox(
+                                    width: 12,
+                                  ),
+                                  TextView(
+                                    text: allStrings.emailLabel,
+                                    fontSize: 17,
+                                    fontWeight: FontWeight.w900,
+                                  ),
+                                ],
+                              ),
+                              TextView(
+                                text: _emailController.text,
+                                fontSize: 12,
+                                fontWeight: FontWeight.w500,
+                              ),
+                              Row(
+                                children: [
+                                  Image.asset(
+                                    'assets/images/github.png',
+                                    scale: 20,
+                                    fit: BoxFit.cover,
+                                  ),
+                                  const SizedBox(
+                                    width: 10,
+                                  ),
+                                  TextView(
+                                    text: allStrings.githubIdLabel,
+                                    fontSize: 17,
+                                    fontWeight: FontWeight.w900,
+                                  ),
+                                ],
+                              ),
+                              TextView(
+                                text: _gitHubIdController.text,
+                                fontSize: 12,
+                                fontWeight: FontWeight.w500,
+                              ),
+                              Row(
+                                children: [
+                                  Image.asset(
+                                    'assets/images/slack_logo.png',
+                                    scale: 17,
+                                    fit: BoxFit.cover,
+                                  ),
+                                  TextView(
+                                    text: allStrings.slackIdLabel,
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.w900,
+                                  ),
+                                ],
+                              ),
+                              TextView(
+                                text: _slackIdController.text,
+                                fontSize: 12,
+                                fontWeight: FontWeight.w500,
                               ),
                             ],
                           ),
                         ),
-                      ],
-                    ),
-                  ],
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      const Divider(
+                        color: Color(0xff9381ff),
+                        thickness: .5,
+                      ),
+                    ],
+                  ),
                 ),
-              )
-            ],
-          ),
-        ],
+                Expanded(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      TextView(
+                        text: allStrings.bioLabel,
+                        fontSize: 18,
+                        fontWeight: FontWeight.w900,
+                      ),
+                      Container(
+                        width: MediaQuery.of(context).size.width,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            border: Border.all(color: const Color(0xffb8c0ff))),
+                        child: TextView(
+                          text: _bioController.text,
+                          fontSize: 12,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                      const Divider(
+                        color: Color(0xff7209b7),
+                        thickness: .50,
+                      ),
+                      TextView(
+                        text: allStrings.educationLabel,
+                        fontSize: 18,
+                        fontWeight: FontWeight.w900,
+                      ),
+                      Container(
+                        width: MediaQuery.of(context).size.width,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            border: Border.all(color: const Color(0xffb8c0ff))),
+                        child: TextView(
+                          text: _educationController.text,
+                          fontSize: 12,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                      const Divider(
+                        color: Color(0xff7209b7),
+                        thickness: .50,
+                      ),
+                      Container(
+                        child: TextView(
+                          text: allStrings.experiencesLabel,
+                          fontSize: 18,
+                          fontWeight: FontWeight.w900,
+                        ),
+                      ),
+                      Container(
+                        width: MediaQuery.of(context).size.width,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            border: Border.all(color: const Color(0xffb8c0ff))),
+                        child: TextView(
+                          text: _experiencesController.text,
+                          fontSize: 12,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                      const Divider(
+                        height: .50,
+                        color: Color(0xff9381ff),
+                        thickness: .15,
+                      ),
+                      Container(
+                        child: TextView(
+                          text: allStrings.skillsInterestsLabel,
+                          fontSize: 18,
+                          fontWeight: FontWeight.w900,
+                        ),
+                      ),
+                      Container(
+                        width: MediaQuery.of(context).size.width,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            border: Border.all(color: const Color(0xffb8c0ff))),
+                        child: TextView(
+                          text: _skillsInterestsController.text,
+                          fontSize: 12,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          ElevatedButton(
+                            style: ButtonStyle(
+                              minimumSize:
+                                  MaterialStateProperty.all(const Size(150, 51)),
+                              maximumSize:
+                                  MaterialStateProperty.all(const Size(150, 51)),
+                              elevation: const MaterialStatePropertyAll(20),
+                              backgroundColor: MaterialStateProperty.all(
+                                const Color(0xffabc4ff),
+                              ),
+                            ),
+                            onPressed: () {
+                              cvFields = CVFields(
+                                name: _nameController.text,
+                                address: _addressController.text,
+                                email: _emailController.text,
+                                phone: _phoneController.text,
+                                bio: _bioController.text,
+                                slackId: _slackIdController.text,
+                                githubId: _gitHubIdController.text,
+                                education: _educationController.text,
+                                experience: _experiencesController.text,
+                                skillsInterests: _skillsInterestsController.text,
+                                role: _roleController.text,
+                              );
+                              getCVdata(cvFields);
+                            },
+                            child: const Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text(
+                                  "Edit CV",
+                                  style: TextStyle(
+                                      color: Colors.black,
+                                      fontSize: 17,
+                                      fontWeight: FontWeight.w700),
+                                ),
+                                Icon(
+                                  Icons.edit_outlined,
+                                  color: Colors.black,
+                                  size: 20,
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                )
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
